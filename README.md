@@ -8,7 +8,8 @@ We will analyze the dataset of the job requirement in the companies and predict 
 
 Project Idea 2: Healthcare Analytics  
 Abstract:  
-In this project we will analyze the medicare data and the payments made for services provided to a patient by the hospital 3 days prior to the hospital stay, during the stay, and during the 30 days after discharge from the hospital. Here we will analyze the insurance plan  Medicare and Medicaid Services which is provided to the US citizens above 65 years of age.
+In this project we will analyze the medicare data and the payments made for services provided to a patient by the hospital 3 days prior to the hospital stay, during the stay, and during the 30 days after discharge from the hospital. Here we will analyze the insurance plan  Medicare and Medicaid Services which is provided to the US citizens above 65 years of age.  
+References : https://catalog.data.gov/dataset/medicare-hospital-spending-per-patient-hospital-da578  
 
 
 Project Idea 3: Issue Tracking System  
@@ -30,4 +31,6 @@ This is a data analytics project to track the engagement of the employees of a b
 -Job security and career growth  
 -Leadership and direction  
 -Teamwork and cooperation  
--Training and development
+-Training and development  
+
+References: http://ranjanr.blogspot.com/2017/02/brand-new-project-ideas-for-class-of.html
