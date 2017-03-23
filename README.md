@@ -5,7 +5,6 @@ Abstract:
 We will analyze the dataset of the job requirement in the companies and predict their future hiring pattern . We will predict the upcoming trends of technology companies and identify their future investments in technology . The current demand in the industry will predict the hiring pattern and the skill-set that will be in-demand by the corporations in the near future. In this project, we intend to collect data from job posting websites like Glassdoor, Linkedin, Indeed, etc.
 
 
-
 Project Idea 2: Healthcare Analytics  
 Abstract:  
 In this project we will analyze the medicare data and the payments made for services provided to a patient by the hospital 3 days prior to the hospital stay, during the stay, and during the 30 days after discharge from the hospital. Here we will analyze the insurance plan  Medicare and Medicaid Services which is provided to the US citizens above 65 years of age.
