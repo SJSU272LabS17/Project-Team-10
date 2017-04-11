@@ -16,7 +16,7 @@ Abstract:
 Every organization uses a tracking system to manage employee issues. Based on the category, the issues are routed to different departments. Generally, the employees are not aware of the category in which their issue falls into. In this case using Machine Learning of the keywords these issues are automatically assigned to the respective departments.
 
 
-Project Idea 4: How Engaged My Employees Are?  
+Project Idea 4: How Engaged My Employees Are?  - APPROVED
 Abstract:  
 This is a data analytics project to track the engagement of the employees of a business/organisation. This includes mining an employee's social media interactions such as tweets, posts and generating results from the vocabulary used in those posts. Some of the trackers are as listed below:  
 -Work processes  
