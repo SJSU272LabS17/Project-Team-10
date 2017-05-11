@@ -3,7 +3,7 @@
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CMPE-272</title>
+    <title>Survey Form</title>
 	<!-- Bootstrap Styles-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FontAwesome Styles-->
@@ -11,9 +11,8 @@
         <!-- Custom Styles-->
     <link href="assets/css/custom-styles.css" rel="stylesheet" />
      <!-- Google Fonts-->
-   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+   <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
 </head>
-	
 <body>
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar text-center" role="navigation">
@@ -24,8 +23,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">CMPE-272</a></div>
-
+                <a class="navbar-brand" href="index.html" style="background-color: aliceblue; text-transform: lowercase; color: black">analyti<b style="color: blueviolet">x</b></a></div>
         </nav>
         <!--/. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
@@ -33,7 +31,7 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a href="dashboard.html"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
                      <a href="chart.html"><em class="fa fa-bar-chart-o"></em> Charts <span class="fa arrow"></span></a>
@@ -42,13 +40,13 @@
                                 <a href="lifework.php">Life/Work Balance</a>
                             </li>
                             <li>
-                                <a href="#">Employee/Supervisor Relation</a>
+                                <a href="employeesupervisor.php">Employee/Supervisor Relation</a>
                             </li>
                             <li>
-                                <a href="#">Employee Satisfaction</a>
+                                <a href="employeesatisfaction.php">Employee Satisfaction</a>
                             </li>
                             <li>
-                                <a href="#">Teamwork and Cooperation</a>
+                                <a href="teamwork.php">Teamwork and Cooperation</a>
                             </li>
                         </ul>
                     </li>
@@ -254,15 +252,62 @@
                                         
                                     </tbody>
                                 </table>
+                                <div class="row">
+                                	<div class="col-sm-6">
+                                		<div class="dataTables_info" id="dataTables-example_info" role="alert" aria-live="polite" aria relevant="all">
+                                			Showing 1 to 10 of 57 entries
+                                		</div>
+                                	</div>
+                                		<div class="col-sm-6">
+                                		<div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate">
+                                			<ul class="pagination">
+                                				<li class="paginate_button previous disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
+                                					<a href="#">Previous</a>
+                                				</li>
+                                				<li class="paginate_button active" aria-controls="dataTables-example" tabindex="0">
+                                					<a href="#">1</a>
+                                				</li>
+                                				<li class="paginate_button " aria-controls="dataTables-example" tabindex="0">
+                                					<a href="#">2</a>
+                                				</li>
+                                				<li class="paginate_button " aria-controls="dataTables-example" tabindex="0">
+                                					<a href="#">3</a>
+                                				</li>
+                                				<li class="paginate_button " aria-controls="dataTables-example" tabindex="0">
+                                					<a href="#">4</a>
+                                				</li>
+                                				<li class="paginate_button " aria-controls="dataTables-example" tabindex="0">
+                                					<a href="#">5</a>
+                                				</li>
+                                				<li class="paginate_button " aria-controls="dataTables-example" tabindex="0">
+                                					<a href="#">6</a>
+                                				</li>
+                                				<li class="paginate_button next" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next">
+                                					<a href="#">Next</a>
+                                				</li>
+                                			</ul>
+                                		</div>
+                                	</div>
+                                </div>
                             </div>
                         </div>
+                        
+                
+               
             </div>
-            </div>
+            
+            
+            
+            
+			
+			</div>
              <!-- /. PAGE INNER  -->
             </div>
          <!-- /. PAGE WRAPPER  -->
         </div>
      <!-- /. WRAPPER  -->
+		</div>
+	</div>
     <!-- JS Scripts-->
     <!-- jQuery Js -->
     <script src="assets/js/jquery-1.10.2.js"></script>
