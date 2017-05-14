@@ -1,0 +1,621 @@
+<>
+	<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <!-- FontAwesome Styles-->
+    <link href="public/css/font-awesome.css" rel="stylesheet" />
+
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Morris Chart Styles-->
+    <link href="public/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="public/css/custom-styles.css" rel="stylesheet" />
+
+
+     <!-- Morris Chart Styles-->
+    <link href="/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+
+
+<!-- Google Fonts-->
+<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
+	<!-- JS Scripts-->
+	<!-- jQuery Js -->
+  <script src="js/jquery-1.10.2.js"></script>
+      <!-- Bootstrap Js -->
+      <script src="js/bootstrap.min.js"></script>
+      <!-- Custom Js -->
+      <script src="js/custom-scripts.js"></script>
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.0/handlebars.js"></script>
+	<!--script src="/public/js/Employee.js" charset="utf-8"></script-->
+	<script src="/public/js/fusioncharts_demo.js" charset="utf-8"></script>
+	<script src="/public/js/fusioncharts.js"></script>
+	<script src="/public/js/fusioncharts.charts.js"></script>
+	<script src="/public/js/fusioncharts.theme.zune.js"></script>
+	<script src="/public/js/fusioncharts.widgets.js"></script>
+	<script src="/public/js/fusioncharts.powercharts.js"></script>
+
+
+<script>
+
+
+
+function Lifework(div1,div2,div3,div4,div5)
+{
+  d1 = document.getElementById(div1);
+  d2 = document.getElementById(div2);
+  d3 = document.getElementById(div3);
+  d4 = document.getElementById(div4);
+  d5 = document.getElementById(div5);
+
+  if(d2.style.display == "none")
+  {
+    d2.style.display = "block";
+    d1.style.display = "none";
+    d3.style.display = "none";
+    d4.style.display = "none";
+    d5.style.display = "none";
+  }
+  else {
+    d2.style.display == "initial";
+  }
+
+}
+
+
+function EmpSup(div1,div2,div3,div4,div5)
+{
+  d1 = document.getElementById(div1);
+  d2 = document.getElementById(div2);
+  d3 = document.getElementById(div3);
+  d4 = document.getElementById(div4);
+  d5 = document.getElementById(div5);
+
+  if(d3.style.display == "none" )
+  {
+     d3.style.display = "block";
+     d1.style.display = "none";
+     d2.style.display = "none";
+     d4.style.display = "none";
+     d5.style.display = "none";
+
+  }
+
+  else {
+    d3.style.display == "initial";
+  }
+
+}
+
+
+function EmpSat(div1,div2,div3,div4,div5)
+{
+  d1 = document.getElementById(div1);
+  d2 = document.getElementById(div2);
+  d3 = document.getElementById(div3);
+  d4 = document.getElementById(div4);
+  d5 = document.getElementById(div5);
+
+  if(d4.style.display == "none" )
+  {
+     d4.style.display = "block";
+     d1.style.display = "none";
+     d2.style.display = "none";
+     d3.style.display = "none";
+     d5.style.display = "none";
+
+  }
+
+  else {
+    d4.style.display == "initial";
+  }
+
+}
+
+
+function CareerGrowth(div1,div2,div3,div4,div5)
+{
+  d1 = document.getElementById(div1);
+  d2 = document.getElementById(div2);
+  d3 = document.getElementById(div3);
+  d4 = document.getElementById(div4);
+  d5 = document.getElementById(div5);
+
+  if(d5.style.display == "none" )
+  {
+     d5.style.display = "block";
+     d1.style.display = "none";
+     d2.style.display = "none";
+     d3.style.display = "none";
+     d4.style.display = "none";
+
+  }
+
+  else {
+    d5.style.display == "initial";
+  }
+
+}
+
+
+</script>
+
+
+    <meta charset="utf-8">
+    <title>Dashboard</title>
+
+</head>
+<body>
+<div id="wrapper">
+    <nav class="navbar navbar-default top-navbar" role="navigation">
+        <div class="navbar-header" >
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html" style="background-color: aliceblue; text-transform: lowercase; color: black">analyti<b style="color: blueviolet">x</b></a></div>
+
+    </nav>
+    <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                  <li>
+                        <a href=""  id="dashboard-link"><i class="fa fa-dashboard"></i>Dashboard</a>
+                    </li>
+                    <li>
+                     <a href="#"><em class="fa fa-bar-chart-o"></em> Charts <span class="fa arrow"></span></a>
+                      <ul class="nav nav-second-level">
+                            <li>
+                                <a href="javascript:Lifework('dashboard','lifework','empsup','empsat','careergrowth')">Life/Work Balance</a>
+                            </li>
+                            <li>
+                                <a href="javascript:EmpSup('dashboard','lifework','empsup','empsat','careergrowth')">Employee/Supervisor Relation</a>
+                            </li>
+                            <li>
+                                <a href="javascript:EmpSat('dashboard','lifework','empsup','empsat','careergrowth')">Employee Satisfaction</a>
+                            </li>
+                            <li>
+                                <a href="javascript:CareerGrowth('dashboard','lifework','empsup','empsat','careergrowth')">Career Growth</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!--<li>-->
+                        <!--<a href="table.html"><i class="fa fa-table"></i> Responsive Tables</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="form.html"><i class="fa fa-edit"></i> Forms </a>-->
+                    <!--</li>-->
+
+                    <li> </li>
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+    <div id="page-wrapper" >
+        <div id="page-inner">
+
+
+
+          <!-- /DASHBOARD  -->
+          <div id="dashboard" style="display:block;">
+            <div class="row" >
+                <div class="col-md-12" style="width:100%; height:100%;">
+                    <h1 class="page-header">
+                        Dashboard
+                    </h1>
+                </div>
+                <div class="text-center"><h3>This web-application takes the survey
+                    responses of around 400k Plus employees to generate graphical
+                    representation of Employee-Engagement in the organization.</h3></div>
+                <div><h4>SURVEY VIABILITY RESPONSE OF THE EMPLOYEES</h4></div>
+                <div><br/><br/></div>
+            </div>
+            <!-- /. ROW  -->
+
+
+            <div class="row">
+
+              <!--<div id="table-location">-->
+              <!--</div>-->
+              <!--<div id="chart-location">-->
+                <!--<div>-->
+                <!--<script id="tabular-template" type="text/html">-->
+                    <!--<h2>Tabular Data of Federal Employees</h2>-->
+                    <!--<table class="table table-bordered col-lg-6">-->
+                        <!--<thead>-->
+                        <!--<tr>-->
+                            <!--<td>Graph</td>-->
+                            <!--\{{#each categories}} <td>\{{label}}</td> \{{/each }}-->
+                        <!--</tr>-->
+                        <!--</thead>-->
+                        <!--<tbody>-->
+                        <!--\{{#each dataset}}-->
+                        <!--<tr>-->
+                            <!--<td>\{{label}}</td>-->
+                            <!--<td>\{{value}}</td>-->
+                        <!--</tr>-->
+                        <!--\{{/each}}-->
+                        <!--</tbody>-->
+                    <!--</table>-->
+                <!--</script>-->
+                <!--</div>-->
+              <!--</div>-->
+
+            </div>
+              <div class="col-lg-6 col-md-12" style="padding:0px;" id="viability_doughnut-location">
+                  <div >
+                      <div >
+                          <div class="panel-heading">
+                              Donut Chart
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            <!-- /. ROW  -->
+        <!-- /. PAGE INNER  -->
+    </div>
+
+
+    <!-- LIFE/WORK SURVEY  -->
+    <div id="lifework" style="display:none;">
+      <div class="row" >
+          <div class="col-md-12" style="width:100%; height:100%;">
+              <h1 class="page-header">
+                  Work-Life Balance Survey
+              </h1>
+          </div>
+
+          <div><br/><br/></div>
+      </div>
+      <!-- /. ROW  -->
+
+      <div class="row">
+        <div id="chart-location">
+          <div>
+          <script id="tabular-template" type="text/html">
+              <h2>Tabular Data of Federal Employees</h2>
+              <table class="table table-bordered">
+                  <thead>
+                  <tr>
+                      <td>Graph</td>
+                      \{{#each categories}} <td>\{{label}}</td> \{{/each }}
+                  </tr>
+                  </thead>
+                  <tbody>
+                  \{{#each dataset}}
+                  <tr>
+                      <td>\{{label}}</td>
+                      <td>\{{value}}</td>
+                  </tr>
+                  \{{/each}}
+                  </tbody>
+              </table>
+          </script>
+          </div>
+        </div>
+      </div>
+      <!-- /. ROW  -->
+
+        <div class="col-lg-6 col-md-12" style="padding:0px;" id="wl_bar2d-location">
+            <div  >
+                <div class="panel-heading" >
+                    Bar Chart
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12" style="padding:0px;" id="wl_doughnut-location">
+            <div >
+                <div >
+                    <div class="panel-heading">
+                        Donut Chart
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12" style="padding:0px;" id="wl_pie_chart-location">
+            <div>
+                <div >
+                    <div class="panel-heading">
+                        Pie Chart
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12" style="padding:0px;" id="wl_chart-location">
+            <div>
+                <div >
+                    <div class="panel-heading">
+                        Pie Chart
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- /. PAGE INNER  -->
+    </div>
+
+
+    <!-- EMPLOYEE-SUPERVISOR SURVEY  -->
+    <div id="empsup" style="display:none;">
+      <div class="row" >
+          <div class="col-md-12" style="width:100%; height:100%;">
+              <h1 class="page-header">
+                  Employee-Supervisor Survey
+              </h1>
+          </div>
+
+          <div><br/><br/></div>
+      </div>
+      <!-- /. ROW  -->
+
+      <div class="row">
+
+        <div id="chart-location">
+          <div>
+          <script id="tabular-template" type="text/html">
+              <h2>Tabular Data of Federal Employees</h2>
+              <table class="table table-bordered">
+                  <thead>
+                  <tr>
+                      <td>Graph</td>
+                      \{{#each categories}} <td>\{{label}}</td> \{{/each }}
+                  </tr>
+                  </thead>
+                  <tbody>
+                  \{{#each dataset}}
+                  <tr>
+                      <td>\{{label}}</td>
+                      <td>\{{value}}</td>
+                  </tr>
+                  \{{/each}}
+                  </tbody>
+              </table>
+          </script>
+          </div>
+        </div>
+      </div>
+        <div class="col-lg-6 col-md-12" style="padding:0px;" id="sup_bar2d-location">
+            <div  >
+                <div class="panel-heading" >
+                    Bar Chart
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12" style="padding:0px;" id="sup_doughnut-location">
+            <div >
+                <div >
+                    <div class="panel-heading">
+                        Donut Chart
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12" style="padding:0px;" id="sup_pie_chart-location">
+            <div>
+                <div >
+                    <div class="panel-heading">
+                        Pie Chart
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12" style="padding:0px;" id="sup_chart-location">
+            <div>
+                <div >
+                    <div class="panel-heading">
+                        Pie Chart
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- /. PAGE INNER  -->
+    </div>
+
+
+
+
+    <!-- EMPLOYEE SATISFACTION  -->
+    <div id="empsat" style="display:none;">
+      <div class="row" >
+          <div class="col-md-12" style="width:100%; height:100%;">
+              <h1 class="page-header">
+                  Employee Satisfaction Survey
+              </h1>
+          </div>
+
+          <div><br/><br/></div>
+      </div>
+      <!-- /. ROW  -->
+
+      <!--<div class="row">-->
+
+        <!--<div id="chart-location">-->
+          <!--<div>-->
+          <!--<script id="tabular-template" type="text/html">-->
+              <!--<h2>Tabular Data of Federal Employees</h2>-->
+              <!--<table class="table table-bordered">-->
+                  <!--<thead>-->
+                  <!--<tr>-->
+                      <!--<td>Graph</td>-->
+                      <!--\{{#each categories}} <td>\{{label}}</td> \{{/each }}-->
+                  <!--</tr>-->
+                  <!--</thead>-->
+                  <!--<tbody>-->
+                  <!--\{{#each dataset}}-->
+                  <!--<tr>-->
+                      <!--<td>\{{label}}</td>-->
+                      <!--<td>\{{value}}</td>-->
+                  <!--</tr>-->
+                  <!--\{{/each}}-->
+                  <!--</tbody>-->
+              <!--</table>-->
+          <!--</script>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!-- /. ROW  -->
+
+      <div class="col-lg-6 col-md-12" style="padding:0px;" id="emp_sat_bar2d-location">
+          <div  >
+              <div class="panel-heading" >
+                  Bar Chart
+              </div>
+          </div>
+      </div>
+
+      <div class="col-lg-6 col-md-12" style="padding:0px;" id="emp_sat_doughnut-location">
+        <div >
+          <div >
+            <div class="panel-heading">
+              Donut Chart
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-md-12" style="padding:0px;" id="emp_sat_pie_chart-location">
+        <div>
+          <div >
+            <div class="panel-heading">
+              Pie Chart
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="col-lg-6 col-md-12" style="padding:0px;" id="emp_sat_chart-location">
+            <div>
+                <div >
+                    <div class="panel-heading">
+                        Pie Chart
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- /. PAGE INNER  -->
+    </div>
+
+
+
+
+    <!-- TEAMWORK SURVEY  -->
+    <div id="careergrowth" style="display:none;">
+      <div class="row" >
+          <div class="col-md-12" style="width:100%; height:100%;">
+              <h1 class="page-header">
+                  Positive Career Growth of the Federal Employees
+              </h1>
+          </div>
+
+          <div><br/><br/></div>
+      </div>
+      <!-- /. ROW  -->
+
+      <!--<div class="row">-->
+
+        <!--<div id="chart-location">-->
+          <!--<div>-->
+          <!--<script id="tabular-template" type="text/html">-->
+              <!--<h2>Tabular Data of Federal Employees</h2>-->
+              <!--<table class="table table-bordered">-->
+                  <!--<thead>-->
+                  <!--<tr>-->
+                      <!--<td>Graph</td>-->
+                      <!--\{{#each categories}} <td>\{{label}}</td> \{{/each }}-->
+                  <!--</tr>-->
+                  <!--</thead>-->
+                  <!--<tbody>-->
+                  <!--\{{#each dataset}}-->
+                  <!--<tr>-->
+                      <!--<td>\{{label}}</td>-->
+                      <!--<td>\{{value}}</td>-->
+                  <!--</tr>-->
+                  <!--\{{/each}}-->
+                  <!--</tbody>-->
+              <!--</table>-->
+          <!--</script>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!-- /. ROW  -->
+
+      ENTER CHARTS FOR CAREER-GROWTH SURVEY HERE.
+        <div class="col-lg-6 col-md-12" style="padding:0px;" id="career_bar2d-location">
+            <div  >
+                <div class="panel-heading" >
+                    Bar Chart
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12" style="padding:0px;" id="career_doughnut-location">
+            <div >
+                <div >
+                    <div class="panel-heading">
+                        Donut Chart
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12" style="padding:0px;" id="career_pie_chart-location">
+            <div>
+                <div >
+                    <div class="panel-heading">
+                        Pie Chart
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12" style="padding:0px;" id="career_chart-location">
+            <div>
+                <div >
+                    <div class="panel-heading">
+                        Pie Chart
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12" style="padding:0px;" id="career_doughnut-location">
+            <div >
+                <div >
+                    <div class="panel-heading">
+                        Donut Chart
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- /. PAGE INNER  -->
+    </div>
+
+  </div>
+    <!-- /. PAGE WRAPPER  -->
+</div>
+<!-- /. WRAPPER  -->
+
+
+</body>
+
+<!-- Location where the chart will be added -->
+
+<div id="pyramid-location">
+
+</div>
+
+
+</html>

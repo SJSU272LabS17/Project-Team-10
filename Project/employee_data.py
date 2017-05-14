@@ -5,12 +5,12 @@ import json
 from pymongo import MongoClient
 
 client = MongoClient('mongodb://localhost:27017/')
-db = client.test_database
+db = client.survey_database
 
 
 jsonFile = 'data.json'
-f = open('evs2015_PRDF.csv', "r")
-df = pd.read_csv('evs2015_PRDF.csv')
+f = open('federal_survey2015.csv', "r")
+df = pd.read_csv('federal_survey2015.csv')
 path = 'data.json'
 df.to_json(path, orient='records')
 
@@ -208,6 +208,36 @@ def supervisor_set1(start, end):
     print supervisorDict
 
 
+def appraisal():
+    qNo = 15
+    data = {}
+    s_data = dict()
+    questionNo = 'Q' + str(qNo)
+    s_data[questionNo] = df[questionNo]
+    data['response'] = s_data
+    cnt = Counter()
+    collection = data
+    for x in collection['response'][questionNo]:
+        if not pd.isnull(x):
+            cnt[x] += 1
+
+    json_Type = cnt
+    appraisalDict = dict()
+
+    appraisalDict['strongly_disagree'] = json_Type['1']
+    appraisalDict['disagree'] = json_Type['2']
+    appraisalDict['neutral'] = json_Type['3']
+    appraisalDict['agree'] = json_Type['4']
+    appraisalDict['strongly_agree'] = json_Type['5']
+    appraisalDict['not_sure'] = json_Type['X']
+
+    appraisal = db.appraisal
+    appraisal_id = appraisal.insert(appraisalDict)
+
+    print appraisalDict
+
+
+
 def supervisor_set2(start, end):
     data = {}
     s_data = dict()
@@ -270,10 +300,103 @@ def question52(qNo):
     print supervisorDict
 
 
-def immediate_supervisor():
+def manager_sentiment():
+    qNo= 60
+    data = {}
+    s_data = dict()
+    questionNo = 'Q' + str(qNo)
+    s_data[questionNo] = df[questionNo]
+    data['response'] = s_data
+    cnt = Counter()
+    collection = data
+    for x in collection['response'][questionNo]:
+        if not pd.isnull(x):
+            cnt[x] += 1
+
+    json_Type = cnt
+    managerDict = dict()
+
+    managerDict['very_Poor'] = json_Type[1]
+    managerDict['poor'] = json_Type[2]
+    managerDict['fair'] = json_Type[3]
+    managerDict['good'] = json_Type[4]
+    managerDict['very_Good'] = json_Type[5]
+
+    question60 = db.question60
+    question60_id = question60.insert(managerDict)
+
+    return managerDict
+
+
+def career_growth():
+    start = 1
+    end = 8
+    data = {}
+    s_data = dict()
+    totalRange = (end - start) + 1
+    if totalRange == 0:
+        totalRange = 1
+    globalCnt = Counter()
+    for i in range(start, end + 1):
+        questionNo = 'Q' + str(i)
+        s_data[questionNo] = df[questionNo]
+
+        data['response'] = s_data
+        cnt = Counter()
+        collection = data
+
+        for x in collection['response'][questionNo]:
+            if not pd.isnull(x):
+                cnt[x] += 1
+        globalCnt += cnt
+
+    json_Type = globalCnt
+    careerGrowthDict = dict()
+
+    careerGrowthDict['strongly_disagree'] = json_Type[1] / totalRange
+    careerGrowthDict['disagree'] = json_Type[2] / totalRange
+    careerGrowthDict['neutral'] = json_Type[3] / totalRange
+    careerGrowthDict['agree'] = json_Type[4] / totalRange
+    careerGrowthDict['strongly_agree'] = json_Type[5] / totalRange
+
+    career_growth = db.career_growth
+    career_growth_id = career_growth.insert_one(careerGrowthDict)
+
+    print careerGrowthDict
+
+
+def supervisor_sentiment():
     question52(52)
     supervisor_set1(42, 47)
     supervisor_set2(48, 51)
+
+
+def work_unit_sentiment():
+    qNo = 28
+    data = {}
+    s_data = dict()
+    questionNo = 'Q' + str(qNo)
+    s_data[questionNo] = df[questionNo]
+    data['response'] = s_data
+    cnt = Counter()
+    collection = data
+    for x in collection['response'][questionNo]:
+        if not pd.isnull(x):
+            cnt[x] += 1
+
+    json_Type = cnt
+    workUnitDict = dict()
+
+    workUnitDict['very_poor'] = json_Type[1]
+    workUnitDict['poor'] = json_Type[2]
+    workUnitDict['fair'] = json_Type[3]
+    workUnitDict['good'] = json_Type[4]
+    workUnitDict['very_good'] = json_Type[5]
+
+    work_unit_sentiment = db.work_unit_sentiment
+    question28_id = work_unit_sentiment.insert(workUnitDict)
+
+    return workUnitDict
 
 
 def work_life_balance():
@@ -281,17 +404,53 @@ def work_life_balance():
     jsonOut_Set2 = work_life_set2(79, 84)
     jsonOut_q72 = question72(72)
     jsonOut_q73 = question73(73)
+    jsonOut_q60 = manager_sentiment()
 
     print jsonOut_Set1
     print jsonOut_q72
     print jsonOut_Set2
     print jsonOut_q73
+    print jsonOut_q60
+
+
+def survey_viability():
+    qNo = 41
+    data = {}
+    s_data = dict()
+    questionNo = 'Q' + str(qNo)
+    s_data[questionNo] = df[questionNo]
+    data['response'] = s_data
+    cnt = Counter()
+    collection = data
+    for x in collection['response'][questionNo]:
+        if not pd.isnull(x):
+            cnt[x] += 1
+
+    json_Type = cnt
+    surveyViabilityDict = dict()
+
+    surveyViabilityDict['strongly_disagree'] = json_Type['1']
+    surveyViabilityDict['disagree'] = json_Type['2']
+    surveyViabilityDict['neutral'] = json_Type['3']
+    surveyViabilityDict['agree'] = json_Type['4']
+    surveyViabilityDict['strongly_agree'] = json_Type['5']
+    surveyViabilityDict['not_sure'] = json_Type['X']
+
+    survey_viability = db.survey_viability
+    survey_viability_id = survey_viability.insert(surveyViabilityDict)
+
+    print surveyViabilityDict
 
 
 def main():
     work_life_balance()
     employee_satisfaction()
-    immediate_supervisor()
+    supervisor_sentiment()
+    manager_sentiment()
+    career_growth()
+    appraisal()
+    work_unit_sentiment()
+    survey_viability()
 
 
 if __name__ == '__main__':
