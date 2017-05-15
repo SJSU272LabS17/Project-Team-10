@@ -69,13 +69,13 @@ $(function(){
                 "subCaptionFontSize": "12",
                 "is2D": "1",
                 "bgColor": "#ffffff",
-                "showBorder": '0';
+                "showBorder": '0',
                 "showValues": "1",
                 "numberPrefix": "$",
                 "numberSuffix": "M",
                 "plotTooltext": "Percentage of Employees ",
                 "showPercentValues": "1",
-                "isSliced": "0",
+                "isSliced": "0"
             };
 
             var pyramidProperties={
@@ -104,8 +104,8 @@ $(function(){
                 toolTipColor: "#EEEEEE",
                 toolTipFontSize: "11",
                 use3DLighting: "0",
-                background-color: "transparent",
-                "pieRadius": "20",
+                backgroundcolor: "transparent",
+                "pieRadius": "20"
             };
 
             var bar2d_properties={
@@ -207,6 +207,61 @@ $(function(){
                 }
             }).render();
 
+            var promotion_columnChart = new FusionCharts({
+                //   caption: "Supervisor",
+                type: 'column2d',
+                renderAt: 'promotion_column2d-location',
+                width: '700',
+                height: '700',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: column2dproperties,
+                    categories : categoriesArray,
+                    data: data["promotion_sentiment"]["dataset"]
+                }
+            }).render();
+
+            var appraisal_columnChart = new FusionCharts({
+                //   caption: "Supervisor",
+                type: 'column2d',
+                renderAt: 'appraisal_column2d-location',
+                width: '700',
+                height: '700',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: column2dproperties,
+                    categories : categoriesArray,
+                    data: data["fair_appraisal"]["dataset"]
+                }
+            }).render();
+
+            var work_unit_columnChart = new FusionCharts({
+                //   caption: "Supervisor",
+                type: 'column2d',
+                renderAt: 'work_unit_column2d-location',
+                width: '700',
+                height: '700',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: column2dproperties,
+                    categories : categoriesArray,
+                    data: data["work_unit_sentiment"]["dataset"]
+                }
+            }).render();
+            var manager_columnChart = new FusionCharts({
+                //   caption: "Supervisor",
+                type: 'column2d',
+                renderAt: 'manager_column2d-location',
+                width: '700',
+                height: '700',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: column2dproperties,
+                    categories : categoriesArray,
+                    data: data["manager_sentiment"]["dataset"]
+                }
+            }).render();
+
             var emp_sat_barChart = new FusionCharts({
                 type: 'bar2d',
                 renderAt: 'emp_sat_bar2d-location',
@@ -237,7 +292,7 @@ $(function(){
                 renderAt: 'sup_bar2d-location',
                 width: '700',
                 height: '700',
-                padding: '0px';
+                padding: '0px',
                 dataFormat: 'json',
                 dataSource: {
 
@@ -271,19 +326,56 @@ $(function(){
                 }
             }).render();
 
-            // var pyramidChart = new FusionCharts({
-            //     type: 'pyramid',
-            //     renderAt: 'pyramid-location',
-            //     width: '750',
-            //     height: '750',
-            //     dataFormat: 'json',
-            //     dataSource: {
-            //
-            //         chart: pyramidProperties,
-            //         categories : categoriesArray,
-            //         data : data["collection_one"]["dataset"]
-            //     }
-            // });
+            var promotion_barChart = new FusionCharts({
+                type: 'bar2d',
+                renderAt: 'promotion_bar2d-location',
+                width: '400',
+                height: '400',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: bar2d_properties,
+                    categories : categoriesArray,
+                    data: data["promotion_sentiment"]["dataset"]
+                }
+            }).render();
+            var appraisal_barChart = new FusionCharts({
+                type: 'bar2d',
+                renderAt: 'appraisal_bar2d-location',
+                width: '400',
+                height: '400',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: bar2d_properties,
+                    categories : categoriesArray,
+                    data: data["fair_appraisal"]["dataset"]
+                }
+            }).render();
+            var work_unit_barChart = new FusionCharts({
+                type: 'bar2d',
+                renderAt: 'work_unit_bar2d-location',
+                width: '400',
+                height: '400',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: bar2d_properties,
+                    categories : categoriesArray,
+                    data: data["work_unit_sentiment"]["dataset"]
+                }
+            }).render();
+            var manager_barChart = new FusionCharts({
+                type: 'bar2d',
+                renderAt: 'manager_bar2d-location',
+                width: '400',
+                height: '400',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: bar2d_properties,
+                    categories : categoriesArray,
+                    data: data["manager_sentiment"]["dataset"]
+                }
+            }).render();
+
+
             var emp_sat_pieChart = new FusionCharts({
                 type: 'pie3d',
                 renderAt: 'emp_sat_pie_chart-location',
@@ -353,6 +445,67 @@ $(function(){
                 }
             }).render();
 
+            var promotion_pieChart = new FusionCharts({
+                type: 'pie3d',
+                renderAt: 'promotion_pie_chart-location',
+                width: '600',
+                height: '600',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: pieProperties,
+                    categories : categoriesArray,
+                    data: data["promotion_sentiment"]["dataset"]
+
+                }
+            }).render();
+
+
+            var appraisal_pieChart = new FusionCharts({
+                type: 'pie3d',
+                renderAt: 'appraisal_pie_chart-location',
+                width: '600',
+                height: '600',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: pieProperties,
+                    categories : categoriesArray,
+                    data: data["fair_appraisal"]["dataset"]
+
+                }
+            }).render();
+
+
+            var work_unit_pieChart = new FusionCharts({
+                type: 'pie3d',
+                renderAt: 'work_unit_pie_chart-location',
+                width: '600',
+                height: '600',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: pieProperties,
+                    categories : categoriesArray,
+                    data: data["work_unit_sentiment"]["dataset"]
+
+                }
+            }).render();
+
+            var manager_pieChart = new FusionCharts({
+                type: 'pie3d',
+                renderAt: 'manager_pie_chart-location',
+                width: '600',
+                height: '600',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: pieProperties,
+                    categories : categoriesArray,
+                    data: data["manager_sentiment"]["dataset"]
+
+                }
+            }).render();
+
+
+
+
             var emp_sat_donughtChart = new FusionCharts({
                 type: 'doughnut2d',
                 renderAt: 'emp_sat_doughnut-location',
@@ -413,6 +566,58 @@ $(function(){
                     chart: doughnutProperties,
                     categories : categoriesArray,
                     data: data["survey_viability"]["dataset"]
+                }
+            }).render();
+
+            var promotion_donughtChart = new FusionCharts({
+                type: 'doughnut2d',
+                renderAt: 'promotion_doughnut-location',
+                width: '600',
+                height: '600',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: doughnutProperties,
+                    categories : categoriesArray,
+                    data: data["promotion_sentiment"]["dataset"]
+                }
+            }).render();
+
+            var appraisal_donughtChart = new FusionCharts({
+                type: 'doughnut2d',
+                renderAt: 'appraisal_doughnut-location',
+                width: '600',
+                height: '600',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: doughnutProperties,
+                    categories : categoriesArray,
+                    data: data["fair_appraisal"]["dataset"]
+                }
+            }).render();
+
+            var work_unit_donughtChart = new FusionCharts({
+                type: 'doughnut2d',
+                renderAt: 'work_unit_doughnut-location',
+                width: '600',
+                height: '600',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: doughnutProperties,
+                    categories : categoriesArray,
+                    data: data["work_unit_sentiment"]["dataset"]
+                }
+            }).render();
+
+            var manager_donughtChart = new FusionCharts({
+                type: 'doughnut2d',
+                renderAt: 'manager_doughnut-location',
+                width: '600',
+                height: '600',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: doughnutProperties,
+                    categories : categoriesArray,
+                    data: data["manager_sentiment"]["dataset"]
                 }
             }).render();
 
