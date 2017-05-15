@@ -33,6 +33,7 @@ $(function(){
                 "showAlternateHGridColor": "0",
                 "subcaptionFontBold": "0",
                 "subcaptionFontSize": "14",
+
              //   "pYAxisName": "Cost of Inventory (US $ in thousands)",
              //   "sYAxisName": "Units in Inventory"
             };
@@ -63,24 +64,18 @@ $(function(){
                 "theme": "fint",
                 "caption": "Employee-Response Analysis",
                 "captionOnTop": "0",
-                "captionPadding": "25",
                 "alignCaptionWithCanvas": "1",
                 "subcaption": "",
                 "subCaptionFontSize": "12",
-                "borderAlpha": "20",
                 "is2D": "1",
                 "bgColor": "#ffffff",
+                "showBorder": '0',
                 "showValues": "1",
                 "numberPrefix": "$",
                 "numberSuffix": "M",
                 "plotTooltext": "Percentage of Employees ",
                 "showPercentValues": "1",
-                "chartLeftMargin": "0",
-                "isSliced": "0",
-                "showPlotBorder": "1",
-                "plotBorderThickness": "1",
-                "plotBorderAlpha": "50",
-                "plotBorderColor": "#333333"
+                "isSliced": "0"
             };
 
             var pyramidProperties={
@@ -108,12 +103,14 @@ $(function(){
                 toolTipBorderRadius: "2",
                 toolTipColor: "#EEEEEE",
                 toolTipFontSize: "11",
-                use3DLighting: "0"
+                use3DLighting: "0",
+                backgroundcolor: "transparent",
+                "pieRadius": "20"
             };
 
             var bar2d_properties={
                 "caption": "Employee Engagement",
-                "subCaption": "400 k plus Federal Employees",
+                "subCaption": "400k+ Federal Employees",
                 "yAxisName": "Number of Employees",
                 //  "numberPrefix": "$",
                 "paletteColors": "#0075c2",
@@ -161,8 +158,8 @@ $(function(){
                 //   caption: "Supervisor",
                 type: 'column2d',
                 renderAt: 'sup_chart-location',
-                width: '600',
-                height: '600',
+                width: '700',
+                height: '700',
                 dataFormat: 'json',
                 dataSource: {
                     chart: column2dproperties,
@@ -187,8 +184,8 @@ $(function(){
                 //   caption: "Supervisor",
                 type: 'column2d',
                 renderAt: 'career_chart-location',
-                width: '500',
-                height: '500',
+                width: '700',
+                height: '700',
                 dataFormat: 'json',
                 dataSource: {
                     chart: column2dproperties,
@@ -200,8 +197,8 @@ $(function(){
                 //   caption: "Supervisor",
                 type: 'column2d',
                 renderAt: 'viability_column2d-location',
-                width: '500',
-                height: '500',
+                width: '700',
+                height: '700',
                 dataFormat: 'json',
                 dataSource: {
                     chart: column2dproperties,
@@ -210,11 +207,66 @@ $(function(){
                 }
             }).render();
 
+            var promotion_columnChart = new FusionCharts({
+                //   caption: "Supervisor",
+                type: 'column2d',
+                renderAt: 'promotion_column2d-location',
+                width: '700',
+                height: '700',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: column2dproperties,
+                    categories : categoriesArray,
+                    data: data["promotion_sentiment"]["dataset"]
+                }
+            }).render();
+
+            var appraisal_columnChart = new FusionCharts({
+                //   caption: "Supervisor",
+                type: 'column2d',
+                renderAt: 'appraisal_column2d-location',
+                width: '700',
+                height: '700',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: column2dproperties,
+                    categories : categoriesArray,
+                    data: data["fair_appraisal"]["dataset"]
+                }
+            }).render();
+
+            var work_unit_columnChart = new FusionCharts({
+                //   caption: "Supervisor",
+                type: 'column2d',
+                renderAt: 'work_unit_column2d-location',
+                width: '700',
+                height: '700',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: column2dproperties,
+                    categories : categoriesArray,
+                    data: data["work_unit_sentiment"]["dataset"]
+                }
+            }).render();
+            var manager_columnChart = new FusionCharts({
+                //   caption: "Supervisor",
+                type: 'column2d',
+                renderAt: 'manager_column2d-location',
+                width: '700',
+                height: '700',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: column2dproperties,
+                    categories : categoriesArray,
+                    data: data["manager_sentiment"]["dataset"]
+                }
+            }).render();
+
             var emp_sat_barChart = new FusionCharts({
                 type: 'bar2d',
                 renderAt: 'emp_sat_bar2d-location',
-                width: '500',
-                height: '500',
+                width: '700',
+                height: '700',
                 dataFormat: 'json',
                 dataSource: {
 
@@ -227,8 +279,6 @@ $(function(){
             var work_life_barChart = new FusionCharts({
                 type: 'bar2d',
                 renderAt: 'wl_bar2d-location',
-                width: '500',
-                height: '500',
                 dataFormat: 'json',
                 dataSource: {
 
@@ -240,8 +290,9 @@ $(function(){
             var supervisor_barChart = new FusionCharts({
                 type: 'bar2d',
                 renderAt: 'sup_bar2d-location',
-                width: '500',
-                height: '500',
+                width: '700',
+                height: '700',
+                padding: '0px',
                 dataFormat: 'json',
                 dataSource: {
 
@@ -253,8 +304,8 @@ $(function(){
             var career_barChart = new FusionCharts({
                 type: 'bar2d',
                 renderAt: 'career_bar2d-location',
-                width: '500',
-                height: '500',
+                width: '700',
+                height: '700',
                 dataFormat: 'json',
                 dataSource: {
                     chart: bar2d_properties,
@@ -265,8 +316,8 @@ $(function(){
             var viability_barChart = new FusionCharts({
                 type: 'bar2d',
                 renderAt: 'viability_bar2d-location',
-                width: '500',
-                height: '500',
+                width: '400',
+                height: '400',
                 dataFormat: 'json',
                 dataSource: {
                     chart: bar2d_properties,
@@ -275,19 +326,56 @@ $(function(){
                 }
             }).render();
 
-            // var pyramidChart = new FusionCharts({
-            //     type: 'pyramid',
-            //     renderAt: 'pyramid-location',
-            //     width: '750',
-            //     height: '750',
-            //     dataFormat: 'json',
-            //     dataSource: {
-            //
-            //         chart: pyramidProperties,
-            //         categories : categoriesArray,
-            //         data : data["collection_one"]["dataset"]
-            //     }
-            // });
+            var promotion_barChart = new FusionCharts({
+                type: 'bar2d',
+                renderAt: 'promotion_bar2d-location',
+                width: '400',
+                height: '400',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: bar2d_properties,
+                    categories : categoriesArray,
+                    data: data["promotion_sentiment"]["dataset"]
+                }
+            }).render();
+            var appraisal_barChart = new FusionCharts({
+                type: 'bar2d',
+                renderAt: 'appraisal_bar2d-location',
+                width: '400',
+                height: '400',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: bar2d_properties,
+                    categories : categoriesArray,
+                    data: data["fair_appraisal"]["dataset"]
+                }
+            }).render();
+            var work_unit_barChart = new FusionCharts({
+                type: 'bar2d',
+                renderAt: 'work_unit_bar2d-location',
+                width: '400',
+                height: '400',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: bar2d_properties,
+                    categories : categoriesArray,
+                    data: data["work_unit_sentiment"]["dataset"]
+                }
+            }).render();
+            var manager_barChart = new FusionCharts({
+                type: 'bar2d',
+                renderAt: 'manager_bar2d-location',
+                width: '400',
+                height: '400',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: bar2d_properties,
+                    categories : categoriesArray,
+                    data: data["manager_sentiment"]["dataset"]
+                }
+            }).render();
+
+
             var emp_sat_pieChart = new FusionCharts({
                 type: 'pie3d',
                 renderAt: 'emp_sat_pie_chart-location',
@@ -319,8 +407,8 @@ $(function(){
             var work_life_pieChart = new FusionCharts({
                 type: 'pie3d',
                 renderAt: 'wl_pie_chart-location',
-                width: '600',
-                height: '600',
+                width: '500',
+                height: '500',
                 dataFormat: 'json',
                 dataSource: {
                     chart: pieProperties,
@@ -332,8 +420,8 @@ $(function(){
             var career_pieChart = new FusionCharts({
                 type: 'pie3d',
                 renderAt: 'career_pie_chart-location',
-                width: '600',
-                height: '600',
+                width: '400',
+                height: '400',
                 dataFormat: 'json',
                 dataSource: {
                     chart: pieProperties,
@@ -357,6 +445,64 @@ $(function(){
                 }
             }).render();
 
+            var promotion_pieChart = new FusionCharts({
+                type: 'pie3d',
+                renderAt: 'promotion_pie_chart-location',
+                width: '600',
+                height: '600',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: pieProperties,
+                    categories : categoriesArray,
+                    data: data["promotion_sentiment"]["dataset"]
+
+                }
+            }).render();
+
+
+            var appraisal_pieChart = new FusionCharts({
+                type: 'pie3d',
+                renderAt: 'appraisal_pie_chart-location',
+                width: '600',
+                height: '600',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: pieProperties,
+                    categories : categoriesArray,
+                    data: data["fair_appraisal"]["dataset"]
+
+                }
+            }).render();
+
+
+            var work_unit_pieChart = new FusionCharts({
+                type: 'pie3d',
+                renderAt: 'work_unit_pie_chart-location',
+                width: '600',
+                height: '600',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: pieProperties,
+                    categories : categoriesArray,
+                    data: data["work_unit_sentiment"]["dataset"]
+
+                }
+            }).render();
+
+            var manager_pieChart = new FusionCharts({
+                type: 'pie3d',
+                renderAt: 'manager_pie_chart-location',
+                width: '600',
+                height: '600',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: pieProperties,
+                    categories : categoriesArray,
+                    data: data["manager_sentiment"]["dataset"]
+
+                }
+            }).render();
+
             var emp_sat_donughtChart = new FusionCharts({
                 type: 'doughnut2d',
                 renderAt: 'emp_sat_doughnut-location',
@@ -373,8 +519,8 @@ $(function(){
             var supervisor_donughtChart = new FusionCharts({
                 type: 'doughnut2d',
                 renderAt: 'sup_doughnut-location',
-                width: '600',
-                height: '600',
+                width: '400',
+                height: '400',
                 dataFormat: 'json',
                 dataSource: {
                     chart: doughnutProperties,
@@ -398,8 +544,8 @@ $(function(){
             var career_donughtChart = new FusionCharts({
                 type: 'doughnut2d',
                 renderAt: 'career_doughnut-location',
-                width: '600',
-                height: '600',
+                width: '300',
+                height: '500',
                 dataFormat: 'json',
                 dataSource: {
                     chart: doughnutProperties,
@@ -410,8 +556,8 @@ $(function(){
             var viability_donughtChart = new FusionCharts({
                 type: 'doughnut2d',
                 renderAt: 'viability_doughnut-location',
-                width: '900',
-                height: '900',
+                width: '100%',
+                height: '100%',
                 dataFormat: 'json',
                 dataSource: {
                     chart: doughnutProperties,
@@ -419,6 +565,59 @@ $(function(){
                     data: data["survey_viability"]["dataset"]
                 }
             }).render();
+
+            var promotion_donughtChart = new FusionCharts({
+                type: 'doughnut2d',
+                renderAt: 'promotion_doughnut-location',
+                width: '600',
+                height: '600',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: doughnutProperties,
+                    categories : categoriesArray,
+                    data: data["promotion_sentiment"]["dataset"]
+                }
+            }).render();
+
+            var appraisal_donughtChart = new FusionCharts({
+                type: 'doughnut2d',
+                renderAt: 'appraisal_doughnut-location',
+                width: '600',
+                height: '600',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: doughnutProperties,
+                    categories : categoriesArray,
+                    data: data["fair_appraisal"]["dataset"]
+                }
+            }).render();
+
+            var work_unit_donughtChart = new FusionCharts({
+                type: 'doughnut2d',
+                renderAt: 'work_unit_doughnut-location',
+                width: '600',
+                height: '600',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: doughnutProperties,
+                    categories : categoriesArray,
+                    data: data["work_unit_sentiment"]["dataset"]
+                }
+            }).render();
+
+            var manager_donughtChart = new FusionCharts({
+                type: 'doughnut2d',
+                renderAt: 'manager_doughnut-location',
+                width: '600',
+                height: '600',
+                dataFormat: 'json',
+                dataSource: {
+                    chart: doughnutProperties,
+                    categories : categoriesArray,
+                    data: data["manager_sentiment"]["dataset"]
+                }
+            }).render();
+
         }
     });
-});
+  });
