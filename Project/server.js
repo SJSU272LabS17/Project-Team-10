@@ -20,7 +20,7 @@ MongoClient.connect(dbHost, function (err, db) {
     dbObject = db;
 });
 
-function getData2(responseObj) {
+function getData(responseObj) {
 
     dbObject.collection("employee_satisfaction").find({}).toArray(function (err, docs) {
         if (err) throw err;
@@ -188,11 +188,11 @@ function getData2(responseObj) {
                             "value": res3
                         },
                         {
-                            "label": "Disagree",
+                            "label": "Agree",
                             "value": res4
                         },
                         {
-                            "label": "Strongly Disagree",
+                            "label": "Strongly Agree",
                             "value": res5
                         }
                     ];
@@ -249,20 +249,218 @@ function getData2(responseObj) {
                             "categories": Response
                         };
 
-                        var response =
-                            {
-                                "employee_satisfaction": employee_satistaction,
+                        dbObject.collection("promotion_sentiment").find({}).toArray(function (err, docs) {
+                            if (err) throw err;
+                            //fair promotion response
 
-                                "immediate_supervisor": immediate_supervisor,
+                            var Response = [];
+                            var doc = docs[0];
+                            var ResponseLabel = "Response";
+                            var res1 = doc['strongly_disagree'];
+                            var res2 = doc['disagree'];
+                            var res3 = doc['neutral'];
+                            var res4 = doc['agree'];
+                            var res5 = doc['strongly_agree'];
+                            var res6 = doc['not_sure'];
 
-                                "work_life": work_life,
+                            Response.push({"label": ResponseLabel});
 
-                                "career_growth": career_growth,
+                            var dataset = [
+                                {
+                                    "label": "Strongly Disagree",
+                                    "value": res1
+                                },
+                                {
+                                    "label": "Disagree",
+                                    "value": res2
+                                },
+                                {
+                                    "label": "Neither Agree nor Disagree",
+                                    "value": res3
+                                },
+                                {
+                                    "label": "Agree",
+                                    "value": res4
+                                },
+                                {
+                                    "label": "Strongly Agree",
+                                    "value": res5
+                                },
+                                {
+                                    "label": "Do Not Know",
+                                    "value": res6
+                                }
+                            ];
 
-                                "survey_viability": survey_viability
+                            var promotion_sentiment = {
+                                "dataset": dataset,
+                                "categories": Response
                             };
 
-                        responseObj.json(response);
+                            dbObject.collection("appraisal").find({}).toArray(function (err, docs) {
+                                if (err) throw err;
+                                //fair promotion response
+
+                                var Response = [];
+                                var doc = docs[0];
+                                var ResponseLabel = "Response";
+                                var res1 = doc['strongly_disagree'];
+                                var res2 = doc['disagree'];
+                                var res3 = doc['neutral'];
+                                var res4 = doc['agree'];
+                                var res5 = doc['strongly_agree'];
+                                var res6 = doc['not_sure'];
+
+                                Response.push({"label": ResponseLabel});
+
+                                var dataset = [
+                                    {
+                                        "label": "Strongly Disagree",
+                                        "value": res1
+                                    },
+                                    {
+                                        "label": "Disagree",
+                                        "value": res2
+                                    },
+                                    {
+                                        "label": "Neither Agree nor Disagree",
+                                        "value": res3
+                                    },
+                                    {
+                                        "label": "Agree",
+                                        "value": res4
+                                    },
+                                    {
+                                        "label": "Strongly Agree",
+                                        "value": res5
+                                    },
+                                    {
+                                        "label": "Do Not Know",
+                                        "value": res6
+                                    }
+                                ];
+
+                                var fair_appraisal = {
+                                    "dataset": dataset,
+                                    "categories": Response
+                                };
+
+                                dbObject.collection("work_unit_sentiment").find({}).toArray(function (err, docs) {
+                                    if (err) throw err;
+                                    //fair promotion response
+
+                                    var Response = [];
+                                    var doc = docs[0];
+                                    var ResponseLabel = "Response";
+                                    var res1 = doc['very_poor'];
+                                    var res2 = doc['poor'];
+                                    var res3 = doc['fair'];
+                                    var res4 = doc['good'];
+                                    var res5 = doc['very_good'];
+
+
+                                    Response.push({"label": ResponseLabel});
+
+                                    var dataset = [
+                                        {
+                                            "label": "Strongly Disagree",
+                                            "value": res1
+                                        },
+                                        {
+                                            "label": "Disagree",
+                                            "value": res2
+                                        },
+                                        {
+                                            "label": "Neither Agree nor Disagree",
+                                            "value": res3
+                                        },
+                                        {
+                                            "label": "Agree",
+                                            "value": res4
+                                        },
+                                        {
+                                            "label": "Strongly Agree",
+                                            "value": res5
+                                        }
+                                    ];
+
+                                    var work_unit_sentiment = {
+                                        "dataset": dataset,
+                                        "categories": Response
+                                    };
+
+                                    dbObject.collection("question60").find({}).toArray(function (err, docs) {
+                                        if (err) throw err;
+                                        //immediate supervisor
+                                        var Response = [];
+                                        //for ( index in docs){
+                                        var doc = docs[0];
+                                        var ResponseLabel = "Response";
+                                        //category array
+                                        var res1 = doc['very_Good'];
+                                        //series 1 values array
+                                        var res2 = doc['good'];
+                                        //series 2 values array
+                                        var res3 = doc['fair'];
+                                        var res4 = doc['poor'];
+                                        var res5 = doc['very_Poor'];
+
+                                        Response.push({"label": ResponseLabel});
+
+                                        var dataset = [
+                                            {
+                                                "label": "Very Good",
+                                                "value": res1
+                                            },
+                                            {
+                                                "label": "Good",
+                                                "value": res2
+                                            },
+                                            {
+                                                "label": "Fair",
+                                                "value": res3
+                                            },
+                                            {
+                                                "label": "Poor",
+                                                "value": res4
+                                            },
+                                            {
+                                                "label": "Very Poor",
+                                                "value": res5
+                                            }
+                                        ];
+
+                                        var manager_sentiment = {
+                                            "dataset": dataset,
+                                            "categories": Response
+                                        };
+
+                                        var response =
+                                            {
+                                                "employee_satisfaction": employee_satistaction,
+
+                                                "immediate_supervisor": immediate_supervisor,
+
+                                                "work_life": work_life,
+
+                                                "career_growth": career_growth,
+
+                                                "survey_viability": survey_viability,
+
+                                                "promotion_sentiment": promotion_sentiment,
+
+                                                "fair_appraisal": fair_appraisal,
+
+                                                "work_unit_sentiment": work_unit_sentiment,
+
+                                                "manager_sentiment": manager_sentiment
+                                            };
+
+                                        responseObj.json(response);
+                                    });
+                                });
+                            });
+                        });
                     });
                 });
             });
@@ -282,12 +480,9 @@ app.set('view engine', 'handlebars');
 
 //Defining middleware to serve static files
 app.use('/public', express.static('public'));
-/*app.get("/employee", function (req, res) {
- getData(res);
- });*/
 
 app.get("/employee", function (req, res) {
-    getData2(res);
+    getData(res);
 });
 
 app.get("/", function (req, res) {
