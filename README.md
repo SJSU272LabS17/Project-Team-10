@@ -1,12 +1,12 @@
 ## Spring17-Team10
 
-### Project Name: Analytix: How Engaged Your Employees Are?
+### Analytix: How Engaged Your Employees Are?
 
 Application URL :  https://goo.gl/sJV18I
 
 Demo Video URL : https://youtu.be/QVETYcuF1ao
 
-About Analytix:
+## About Analytix:
 
 Analytix is a scalale tool for all the organizations who want to measure Employee Engagement within their organization. 
 It analyzes the survey conducted within the organization and on the basis of the Employee-Responses it generates graphical outputs as per various the drivers of employee's engagement:
