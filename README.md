@@ -2,7 +2,7 @@
 
 ### Project Name: Analytix: How Engaged Your Employees Are?
 
-Application URL : http://sample-env-2.qfj33vnyje.us-west-2.elasticbeanstalk.com/index.html
+Application URL :  https://goo.gl/sJV18I
 
 Demo Video URL : https://youtu.be/QVETYcuF1ao
 
