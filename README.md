@@ -1,12 +1,12 @@
 ## Spring17-Team10
 
-### Analytix: How Engaged Your Employees Are?
+# Analytix: How Engaged Your Employees Are?
 
 Application URL :  https://goo.gl/sJV18I
 
 Demo Video URL : https://youtu.be/QVETYcuF1ao
 
-## About Analytix:
+# About Analytix:
 
 Analytix is a scalale tool for all the organizations who want to measure Employee Engagement within their organization. 
 It analyzes the survey conducted within the organization and on the basis of the Employee-Responses it generates graphical outputs as per various the drivers of employee's engagement:
@@ -24,7 +24,7 @@ Business and organisations function best when they make their employees’ commi
 Employee engagement strategies enable people to be the best they can at work, recognising that this can only happen if they feel respected, involved, heard, well led and valued by those they work for and with. As a representative of the home insulation company KHI put it: “employee engagement is when the business values the employee and the employee values the business” 
 Engaged employees have a sense of personal attachment to their work and organisation; they are motivated and able to give of their best to help it succeed – and from that flows a series of tangible benefits for organisation and individual alike
 
-## Development Stack:
+# Development Stack:
 
 Technology stack :  MongoDB, ExpressJS, AngularJS, NodeJS, HandlebarsJS, Pyhton, AWS Elastic Beanstalk
 
