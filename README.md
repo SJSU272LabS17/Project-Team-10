@@ -6,6 +6,8 @@ Application URL :  https://goo.gl/sJV18I
 
 Demo Video URL : https://youtu.be/QVETYcuF1ao
 
+Project Report URL : https://github.com/SJSU272LabS17/Project-Team-10/blob/master/Analytixreport.pdf
+
 # About Analytix:
 
 Analytix is a scalale tool for all the organizations who want to measure Employee Engagement within their organization. 
