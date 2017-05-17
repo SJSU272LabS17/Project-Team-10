@@ -52,3 +52,7 @@ Once mongoDB is running then:
 - run npm install
 - run npm start
 - the application is up and running on your local system
+
+# AWS Deployment link :
+
+http://sample-env-2.qfj33vnyje.us-west-2.elasticbeanstalk.com/index.html
