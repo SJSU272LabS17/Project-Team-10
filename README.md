@@ -15,7 +15,7 @@ It analyzes the survey conducted within the organization and on the basis of the
 -Employee-Supervisor Relation
 -Employee- Satisfaction, etc
 
-In out analysis we have taken survey-responses of 422k Plus Federal Employees and analyzed data as per various govenrment organizations.
+In our analysis we have taken survey-responses of 422k Plus Federal Employees and analyzed data as per various govenrment organizations.
 
 # Problem Statement:
 
@@ -38,3 +38,15 @@ Front-End: Bootstrap Front-End with HandlebarsJS as the template engine
 
 Cloud Deployment: 
 AWS Elastic Beanstalk: http://sample-env-2.qfj33vnyje.us-west-2.elasticbeanstalk.com/index.html
+
+# Prerequisites to deploy on local system:
+
+- mongoDB should be installed and running at the default port address
+
+Once mongoDB is running then:
+- clone github repository
+- on terminal run: $python employee_data.py
+- database will be generated in mongoDB database
+- run npm install
+- run npm start
+- the application is up and running on http://localhost:3300
