@@ -17,16 +17,16 @@ It analyzes the survey conducted within the organization and on the basis of the
 
 In out analysis we have taken survey-responses of 422k Plus Federal Employees and analyzed data as per various govenrment organizations.
 
-Problem Statement:
+# Problem Statement:
 
 Employee Engagement is about unlocking people’s potential at work and the measurable benefits of doing so for the individual and the organisation
 Business and organisations function best when they make their employees’ commitment, potential, creativity and capability central to their operation. Clearly, having enough cash, and a sensible strategy, are vital. But how people behave at work can make the crucial difference between business and operational success or failure. 
 Employee engagement strategies enable people to be the best they can at work, recognising that this can only happen if they feel respected, involved, heard, well led and valued by those they work for and with. As a representative of the home insulation company KHI put it: “employee engagement is when the business values the employee and the employee values the business” 
 Engaged employees have a sense of personal attachment to their work and organisation; they are motivated and able to give of their best to help it succeed – and from that flows a series of tangible benefits for organisation and individual alike
 
-Development Stack:
+## Development Stack:
 
-Technology stack used: MongoDB, ExpressJS, AngularJS, NodeJS, HandlebarsJS, Pyhton, AWS Elastic Beanstalk
+Technology stack :  MongoDB, ExpressJS, AngularJS, NodeJS, HandlebarsJS, Pyhton, AWS Elastic Beanstalk
 
 Python: Python is a scripting language that supports many poweful libraries like Pandas, which is an open source,
          BSD-licensed library providing high-performance, easy-to-use data structures and data  
