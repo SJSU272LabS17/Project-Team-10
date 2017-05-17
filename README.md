@@ -51,4 +51,4 @@ Once mongoDB is running then:
 - database will be generated in mongoDB database
 - run npm install
 - run npm start
-- the application is up and running on http://localhost:3300
+- the application is up and running on your local system
